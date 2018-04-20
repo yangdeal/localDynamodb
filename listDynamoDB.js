@@ -4,7 +4,8 @@ exports.handler = (event, context, callback) => {
     // Set the region
     AWS.config.update({
       region: "ap-southeast-2",
-      endpoint: "http://db:8000"
+      endpoint: "http://db1:8000",
+      httpOptions: {timeout: 600000, connectTimeout:600000}
     });
 
 var dynamodb = new AWS.DynamoDB();
